@@ -8,8 +8,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.completed
       @string = 'Cette tâche est faite'
+      @box = '<i class="fa-regular fa-square-check"></i>'
     else
       @string = "Cette tâche n'est pas encore faite"
+      @box = '<i class="fa-regular fa-square"></i>'
     end
   end
 

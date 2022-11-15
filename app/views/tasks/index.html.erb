@@ -2,8 +2,15 @@
 
 <ul class="list-group list-group-flush">
 <% @tasks.each do |task| %>
-  <li class="list-group-item list-group-item-action"><%= link_to "#{task.title}", task_path(task.id) %> - <%= link_to '<i class="fa-regular fa-trash-can"></i>'.html_safe, task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%></li>
+  <li class="list-group-item list-group-item-action list-group-item-secondary">
+    <% if task.completed %>
+      <i class="fa-regular fa-square-check"></i>
+    <% else %>
+      <i class="fa-regular fa-square"></i>
+    <% end %>
+    <%= link_to "#{task.title}", task_path(task.id) %> -
+    <%= link_to '<i class="fa-regular fa-trash-can"></i>'.html_safe, task_path(task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </li>
 <% end %>
 </ul>
 
