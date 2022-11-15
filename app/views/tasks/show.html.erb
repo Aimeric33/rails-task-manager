@@ -1,0 +1,7 @@
+<h1>Tâche : <%= @task.title %></h1>
+
+<p>Détails : <%= @task.details %></p>
+<p><%= @string %></p>
+
+<%= link_to "Modifier cette tâche", edit_task_path, class: "btn btn-primary" %>
+<%= link_to "Retour à ma liste de tâches", tasks_path, class: "btn btn-secondary" %>
